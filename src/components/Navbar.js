@@ -13,7 +13,6 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
 import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
@@ -104,7 +103,7 @@ function NavBar() {
 
             <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/CodeSailor411"
+                href="https://github.com/elyesthabet"
                 target="_blank"
                 className="fork-btn-inner"
               >
