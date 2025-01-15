@@ -70,7 +70,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://twitter.com/your_twitter_handle"
+                  href="https://twitter.com/elyes_thabet"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
@@ -90,7 +90,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.instagram.com/your_instagram_handle"
+                  href="https://www.instagram.com/elyes_thabet/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
