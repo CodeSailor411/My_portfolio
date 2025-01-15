@@ -2,9 +2,7 @@
   Portfolio Website - v2.0<br/>
   <a href="https://elyes-thabet.netlify.app/" target="_blank">elyes-thabet.netlify.app</a>
 </h2>
-<div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
-</div>
+
 
 <br/>
 
