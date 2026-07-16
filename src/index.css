@@ -1,8 +1,106 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+:root {
+  color-scheme: dark;
+  --color-bg: #09070e;
+  --color-bg-deep: #060409;
+  --color-surface: #15101d;
+  --color-surface-raised: #1b1326;
+  --color-surface-hover: #21172f;
+  --color-border: rgba(192, 132, 252, 0.18);
+  --color-border-strong: rgba(192, 132, 252, 0.42);
+  --color-text: #f7f4fb;
+  --color-text-muted: #c9c2d2;
+  --color-text-subtle: #91879f;
+  --color-accent: #c084fc;
+  --color-accent-strong: #a855f7;
+  --color-accent-soft: rgba(192, 132, 252, 0.11);
+  --color-signal: #6ee7d8;
+  --color-signal-soft: rgba(110, 231, 216, 0.12);
+  --container: 74rem;
+  --gutter: clamp(1.2rem, 4vw, 2.5rem);
+  --section-space: clamp(5.5rem, 10vw, 9rem);
+  --radius-sm: 0.7rem;
+  --radius-md: 1.1rem;
+  --radius-lg: 1.55rem;
+  --shadow-card: 0 24px 70px rgba(0, 0, 0, 0.34);
+  --shadow-glow: 0 0 55px rgba(168, 85, 247, 0.13);
+  --duration-fast: 160ms;
+  --duration-base: 280ms;
+  --duration-slow: 580ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
 body {
+  min-width: 320px;
+  min-height: 100vh;
   margin: 0;
-  font-family: "Raleway", serif !important;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 15% -10%, rgba(126, 34, 206, 0.13), transparent 32rem),
+    linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-deep) 100%);
+  color: var(--color-text);
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(192, 132, 252, 0.3);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid var(--color-bg-deep);
+  border-radius: 99px;
+  background: #5e3b75;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8150a1;
 }

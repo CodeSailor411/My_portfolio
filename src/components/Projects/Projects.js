@@ -1,58 +1,87 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { FiActivity, FiCpu, FiLayers, FiRepeat } from "react-icons/fi";
+import ContactCTA from "../ContactCTA";
+import Reveal from "../Reveal";
+import { projects } from "../../data/portfolio";
 import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
-import AiraLogo from "../../Assets/Projects/Aira.svg";
-import OptibuddyLogo from "../../Assets/Projects/Optibuddy.svg";
-import IntersignLogo from "../../Assets/Projects/Intersign.png";
+
+const approach = [
+  {
+    icon: FiActivity,
+    title: "Sense",
+    text: "Acquire physiological and motion data with hardware-aware signal-quality checks.",
+  },
+  {
+    icon: FiLayers,
+    title: "Interpret",
+    text: "Transform noisy time series into representations that models can learn from.",
+  },
+  {
+    icon: FiCpu,
+    title: "Deploy",
+    text: "Connect embedded acquisition, inference, and human-facing applications end to end.",
+  },
+  {
+    icon: FiRepeat,
+    title: "Validate",
+    text: "Iterate against performance, usability, reproducibility, and translation constraints.",
+  },
+];
 
 function Projects() {
   return (
-    <Container fluid className="project-section">
-      <Particle />
-      <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are the projects I've successfully built.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={AiraLogo}
-              isBlog={false}
-              title="Aira"
-              description="A mental health supervision platform that leverages AI for early detection using vital signs and physiological signals tracking."
-              ghLink="https://github.com/CodeSailor411/Aira"
-              demoLink="https://airaapp.netlify.app/"
-            />
-          </Col>
+    <main id="main-content" className="page page--work">
+      <section className="page-hero">
+        <div className="site-shell page-hero__inner">
+          <Reveal>
+            <span className="eyebrow">Selected work</span>
+            <h1>Research and engineering built around real human signals.</h1>
+            <p>
+              From neck-worn PPG and embedded motion sensing to assistive prototypes, each project connects evidence, hardware, software, and the person using the system.
+            </p>
+          </Reveal>
+          <Reveal className="page-hero__index" delay={120} aria-hidden="true">
+            <span>04</span>
+            <small>selected systems</small>
+          </Reveal>
+        </div>
+      </section>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={OptibuddyLogo}
-              isBlog={false}
-              title="Optibuddy"
-              description="An industrial ERP system powered by a smart virtual advisor and advanced dashboard for better management."
-              ghLink="https://github.com/CodeSailor411/optibuddy"
-              demoLink="https://optibuddy.netlify.app/"
-            />
-          </Col>
+      <section className="work-section" aria-label="Selected projects">
+        <div className="site-shell work-grid">
+          {projects.map((project, index) => (
+            <Reveal key={project.id} delay={(index % 2) * 80}>
+              <ProjectCard project={project} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={IntersignLogo}
-              isBlog={false}
-              title="Intersign"
-              description="A desktop app with a 3D avatar that translates spoken language into sign language, helping deaf individuals communicate."
-              ghLink="https://github.com/CodeSailor411/InterSign-2"
-              demoLink="https://intersign.netlify.app/"
-            />
-          </Col>
-        </Row>
-      </Container>
-    </Container>
+      <section className="approach-section" aria-labelledby="approach-heading">
+        <div className="site-shell">
+          <Reveal className="section-heading">
+            <span className="eyebrow">Working method</span>
+            <h2 id="approach-heading">A system is only useful when every layer connects.</h2>
+          </Reveal>
+
+          <div className="approach-grid">
+            {approach.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <Reveal className="approach-card" delay={index * 70} key={item.title}>
+                  <span className="approach-card__icon"><Icon aria-hidden="true" /></span>
+                  <span className="approach-card__number">0{index + 1}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <ContactCTA />
+    </main>
   );
 }
 
