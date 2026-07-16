@@ -1,109 +1,125 @@
 import React, { useEffect, useState } from "react";
-import { FiFileText, FiGithub, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { profile } from "../data/portfolio";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
+import logo from "../Assets/logo.png";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+import { CgGitFork } from "react-icons/cg";
+import { ImLinkedin } from "react-icons/im";
+import {
+  AiFillStar,
+  AiOutlineHome,
+  AiOutlineFundProjectionScreen,
+  AiOutlineUser,
+} from "react-icons/ai";
+import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
-  const [expanded, setExpanded] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const { pathname } = useLocation();
+  const [expand, updateExpanded] = useState(false);
+  const [navColour, updateNavbar] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 18);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const scrollHandler = () => updateNavbar(window.scrollY >= 20);
+
+    scrollHandler();
+    window.addEventListener("scroll", scrollHandler, { passive: true });
+
+    return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
-  useEffect(() => {
-    setExpanded(false);
-  }, [pathname]);
-
-  useEffect(() => {
-    const closeOnEscape = (event) => {
-      if (event.key === "Escape") setExpanded(false);
-    };
-
-    document.addEventListener("keydown", closeOnEscape);
-    document.body.classList.toggle("nav-open", expanded);
-
-    return () => {
-      document.removeEventListener("keydown", closeOnEscape);
-      document.body.classList.remove("nav-open");
-    };
-  }, [expanded]);
-
-  const navigation = [
-    { to: "/", label: "Home", end: true },
-    { to: "/project", label: "Work" },
-    { to: "/about", label: "About" },
-    { to: "/resume", label: "Resume" },
-  ];
-
   return (
-    <header className={`site-nav${scrolled ? " site-nav--scrolled" : ""}`}>
-      <div className="site-shell site-nav__inner">
-        <Link className="brand" to="/" aria-label="Elyes Thabet - home">
-          <span className="brand__mark" aria-hidden="true">ET</span>
-          <span className="brand__copy">
-            <strong>Elyes Thabet</strong>
-            <small>Biomedical systems</small>
-          </span>
-        </Link>
-
-        <button
-          className="nav-toggle"
-          type="button"
-          aria-label={expanded ? "Close navigation" : "Open navigation"}
-          aria-expanded={expanded}
-          aria-controls="primary-navigation"
-          onClick={() => setExpanded((value) => !value)}
+    <Navbar
+      expanded={expand}
+      fixed="top"
+      expand="md"
+      className={navColour ? "sticky" : "navbar"}
+    >
+      <Container>
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="d-flex"
+          aria-label="Elyes Thabet home"
         >
-          {expanded ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
-        </button>
-
-        <nav
-          id="primary-navigation"
-          className={`nav-links${expanded ? " nav-links--open" : ""}`}
-          aria-label="Primary navigation"
+          <img src={logo} className="img-fluid logo" alt="Elyes Thabet Logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          aria-label={expand ? "Close navigation" : "Open navigation"}
+          onClick={() => updateExpanded((isExpanded) => !isExpanded)}
         >
-          {navigation.map((item) => (
-            <NavLink
-              key={item.to}
-              className={({ isActive }) => `nav-link${isActive ? " nav-link--active" : ""}`}
-              to={item.to}
-              end={item.end}
-            >
-              {item.label}
-            </NavLink>
-          ))}
+          <span></span>
+          <span></span>
+          <span></span>
+        </Navbar.Toggle>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto" defaultActiveKey="#home">
+            <Nav.Item>
+              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+              </Nav.Link>
+            </Nav.Item>
 
-          <span className="nav-links__divider" aria-hidden="true" />
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/about"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+              </Nav.Link>
+            </Nav.Item>
 
-          <a
-            className="nav-icon-link"
-            href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Elyes Thabet on LinkedIn"
-          >
-            <FiLinkedin aria-hidden="true" />
-          </a>
-          <a
-            className="nav-icon-link"
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Elyes Thabet on GitHub"
-          >
-            <FiGithub aria-hidden="true" />
-          </a>
-          <Link className="nav-resume-link" to="/resume">
-            <FiFileText aria-hidden="true" /> CV
-          </Link>
-        </nav>
-      </div>
-    </header>
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/project"
+                onClick={() => updateExpanded(false)}
+              >
+                <AiOutlineFundProjectionScreen
+                  style={{ marginBottom: "2px" }}
+                />{" "}
+                Projects
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/resume"
+                onClick={() => updateExpanded(false)}
+              >
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                href="https://www.linkedin.com/in/elyes-thabet-alchemist/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ImLinkedin style={{ marginBottom: "2px" }} /> LinkedIn
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item className="fork-btn">
+              <Button
+                href="https://github.com/CodeSailor411"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Elyes Thabet on GitHub"
+                className="fork-btn-inner"
+              >
+                <CgGitFork aria-hidden="true" style={{ fontSize: "1.2em" }} />{" "}
+                <AiFillStar aria-hidden="true" style={{ fontSize: "1.1em" }} />
+              </Button>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

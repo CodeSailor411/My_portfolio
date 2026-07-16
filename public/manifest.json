@@ -1,14 +1,8 @@
 {
   "short_name": "Elyes Thabet",
   "name": "Elyes Thabet | Biomedical Engineering & Wearable AI",
-  "description": "Elyes Thabet is a Biomedical Engineering student and researcher in biosignal processing, wearable AI, embedded systems, and accessible healthcare technology.",
+  "description": "Portfolio of Elyes Thabet, a biomedical engineering student and researcher in biosignal processing, wearable AI, embedded systems, and assistive technology.",
   "icons": [
-    {
-      "src": "favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
     {
       "src": "favicon.png",
       "sizes": "24x24",

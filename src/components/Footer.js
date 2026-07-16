@@ -1,33 +1,76 @@
 import React from "react";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
-import { profile } from "../data/portfolio";
+import { Container, Row, Col } from "react-bootstrap";
+import {
+  AiFillGithub,
+  AiOutlineTwitter,
+  AiFillInstagram,
+} from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="site-footer">
-      <div className="site-shell site-footer__inner">
-        <div>
-          <strong>Elyes Thabet</strong>
-          <p>Biomedical engineering, biosignal processing, and wearable AI.</p>
-        </div>
-
-        <div className="site-footer__links" aria-label="Contact links">
-          <a href={`mailto:${profile.email}`} aria-label={`Email ${profile.name}`}>
-            <FiMail aria-hidden="true" />
-          </a>
-          <a href={profile.github} target="_blank" rel="noreferrer" aria-label="Elyes Thabet on GitHub">
-            <FiGithub aria-hidden="true" />
-          </a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="Elyes Thabet on LinkedIn">
-            <FiLinkedin aria-hidden="true" />
-          </a>
-        </div>
-
-        <p className="site-footer__legal">Copyright {year} Elyes Thabet</p>
-      </div>
-    </footer>
+    <Container as="footer" fluid className="footer">
+      <Row>
+        <Col md="4" className="footer-copywright">
+          <h3>Developed by Elyes Thabet</h3>
+        </Col>
+        <Col md="4" className="footer-copywright">
+          <h3>
+            Copyright {String.fromCodePoint(0x00a9)} {year} Elyes Thabet
+          </h3>
+        </Col>
+        <Col md="4" className="footer-body">
+          <ul className="footer-icons">
+            <li className="social-icons">
+              <a
+                href="https://github.com/CodeSailor411"
+                style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Elyes Thabet on GitHub"
+              >
+                <AiFillGithub aria-hidden="true" />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="https://twitter.com/ElyesThabet"
+                style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Elyes Thabet on Twitter"
+              >
+                <AiOutlineTwitter aria-hidden="true" />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="https://www.linkedin.com/in/elyes-thabet-alchemist/"
+                style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Elyes Thabet on LinkedIn"
+              >
+                <FaLinkedinIn aria-hidden="true" />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="https://www.instagram.com/elyes_thabet/"
+                style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Elyes Thabet on Instagram"
+              >
+                <AiFillInstagram aria-hidden="true" />
+              </a>
+            </li>
+          </ul>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

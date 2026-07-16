@@ -1,75 +1,73 @@
-# Elyes Thabet - Portfolio
+<h2 align="center">
+  Portfolio Website - v2.0<br/>
+  <a href="https://elyes-thabet.netlify.app/" target="_blank">elyes-thabet.netlify.app</a>
+</h2>
 
-Personal portfolio for [Elyes Thabet](https://github.com/CodeSailor411), a Biomedical Engineering student and researcher focused on biosignal processing, wearable AI, embedded systems, and accessible healthcare technology.
 
-[View the live portfolio](https://elyes-thabet.netlify.app/) | [LinkedIn](https://www.linkedin.com/in/elyes-thabet-alchemist/) | [GitHub](https://github.com/CodeSailor411)
+<br/>
 
-## What the site covers
+<center>
 
-- Cervical-PPG silent-speech research and end-to-end embedded inference
-- Selected biomedical and assistive engineering projects
-- Research experience at Queen's University Belfast, National Chung Cheng University, AI4U, and ISTMT
-- Biomedical Engineering education, technical capabilities, leadership, and publication
-- Downloadable July 2026 resume with an in-browser PDF preview
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
+[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
+![GitHub Repo stars](https://img.shields.io/github/stars/CodeSailor411/My_portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
+![GitHub forks](https://img.shields.io/github/forks/CodeSailor411/My_portfolio?color=red&logo=github&style=for-the-badge)
 
-## Experience
+</center>
 
-The interface keeps the original dark-purple identity while adding:
+<h3 align="center">
+    🔹
+    <a href="https://github.com/CodeSailor411/My_portfolio/issues">Report Bug</a> &nbsp; &nbsp;
+    🔹
+    <a href="https://github.com/CodeSailor411/My_portfolio/issues">Request Feature</a>
+</h3>
 
-- Resume-backed content and a clearer research narrative
-- Lightweight, code-native biosignal and project visuals
-- Responsive layouts for desktop, tablet, and mobile
-- Intersection-based reveals and restrained ambient motion
-- Full `prefers-reduced-motion` support
-- Visible keyboard focus, semantic landmarks, and labeled controls
-- SEO, Open Graph, PWA metadata, and Netlify route fallback
+## TL;DR
 
-## Built with
+You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Elyes Thabet](https://github.com/CodeSailor411/My_portfolio). Thanks!
 
-- React 17
-- React Router
-- React Icons
-- CSS custom properties, Grid, and responsive animation
-- Create React App build tooling
+## Built With
+
+My personal portfolio <a href="https://elyes-thabet.netlify.app" target="_blank">elyes-thabet.netlify.app</a> showcases my work in biomedical engineering, biosignal processing, wearable AI, embedded systems, and assistive technology.<br/>
+
+This project was built using these technologies:
+
+- React.js
+- React-Bootstrap
+- CSS3
+- React Particles, Typewriter, and Parallax Tilt
+- VS Code
 - Netlify
 
-## Run locally
+## Features
 
-You will need Node.js and Git.
+**📖 Multi-Page Layout**
 
-```bash
-git clone https://github.com/CodeSailor411/My_portfolio.git
-cd My_portfolio
-npm ci
-npm start
-```
+**🎨 Styled with React-Bootstrap and CSS, with customizable color schemes**
 
-Open [http://localhost:3000](http://localhost:3000).
+**📱 Fully Responsive**
 
-Create an optimized production build with:
+## Getting Started
 
-```bash
-npm run build
-```
+Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
 
-Run the test suite with:
+## 🛠 Installation and Setup Instructions
 
-```bash
-npm test -- --watchAll=false
-```
+1. Installation: `npm install`
 
-## Project structure
+2. In the project directory, you can run: `npm start`
 
-```text
-public/                    Site metadata, favicon, and Netlify redirects
-src/Assets/resume.pdf      Current one-page resume
-src/components/            Pages and reusable interface components
-src/data/portfolio.js      Resume-backed content source
-src/App.js                 Routing and application shell
-src/index.css              Global tokens and base styles
-src/style.css              Portfolio layout, components, and motion
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits.
 
-## Deployment
+## Usage Instructions
 
-The public site is deployed at [elyes-thabet.netlify.app](https://elyes-thabet.netlify.app/).
+Open the project folder and Navigate to `/src/components/`. <br/>
+You will find all the components used, and you can edit your information accordingly.
+
+### Show your support
+
+Give a ⭐ if you like this website!
+
+<a href="https://www.buymeacoffee.com/elyesthabet" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
